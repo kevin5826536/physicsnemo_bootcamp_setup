@@ -879,8 +879,9 @@ docker build --build-arg PHYSICSNEMO_VERSION=25.11 -t physicsnemo-bootcamp:25.11
 SSH 登入 VM 後，執行以下指令：
 
 ```bash
+cd ~
 git clone https://github.com/kevin5826536/physicsnemo_bootcamp_setup.git
-cd physicsnemo_bootcamp_setup
+cd ~/physicsnemo_bootcamp_setup
 bash setup.sh
 ```
 

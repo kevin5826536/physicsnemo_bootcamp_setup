@@ -3,8 +3,9 @@
 # PhysicsNeMo Bootcamp — VM 環境一鍵設置腳本
 #
 # 使用方式（SSH 登入 VM 後執行）：
+#   cd ~
 #   git clone https://github.com/kevin5826536/physicsnemo_bootcamp_setup.git
-#   cd physicsnemo_bootcamp_setup
+#   cd ~/physicsnemo_bootcamp_setup
 #   bash setup.sh
 #
 # 注意事項：
