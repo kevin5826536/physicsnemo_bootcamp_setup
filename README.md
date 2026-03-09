@@ -746,6 +746,23 @@ http://localhost:8888
 
 **建議教學順序**：Tutorial（2h）→ Challenge（4h），合計約 6 小時
 
+### 11-1. 記分板提交
+
+每跑完一個 Challenge 題目，分數會自動寫入 challenge 資料夾下的 `leaderboard_metrics.csv`。
+
+**下載 CSV：**
+
+在 JupyterLab 左側檔案瀏覽器，切換到 `challenge/` 目錄，對 `leaderboard_metrics.csv` 按右鍵 → 選擇 **Download**。
+
+![從 JupyterLab 下載 leaderboard_metrics.csv](images/leaderboard-download-csv.png)
+
+**上傳至記分板：**
+
+1. 將下載的 `leaderboard_metrics.csv` 壓縮成 `.zip` 檔，**檔名格式為 `xxx_1.zip`**（`xxx` 可自訂，例如團隊名稱）
+2. 上傳至：[記分板 Google Drive 資料夾](https://drive.google.com/drive/folders/1nZRAMdVwUUBYQBVAuLsWDdEX4-GQan-x?usp=drive_link)
+
+> **重新提交**：若想更新分數，以 `xxx_2.zip`、`xxx_3.zip`（遞增數字）重新上傳即可覆蓋前次紀錄。`xxx` 部分需與第一次相同。
+
 ---
 
 ## 常用指令速查
