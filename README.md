@@ -660,7 +660,7 @@ docker ps
 
 ```
 CONTAINER ID   IMAGE                        COMMAND                  CREATED         STATUS         PORTS                                                                       NAMES
-xxxxxxxxxxxx   physicsnemo-bootcamp:25.06   "/opt/nvidia/physic…"    X seconds ago   Up X seconds   6006/tcp, 0.0.0.0:8888-8889->8888-8889/tcp, [::]:8888-8889->8888-8889/tcp   physicsnemo-bootcamp
+xxxxxxxxxxxx   physicsnemo-bootcamp:25.06   "/opt/nvidia/physics…"   X seconds ago   Up X seconds   6006/tcp, 0.0.0.0:8888-8889->8888-8889/tcp, [::]:8888-8889->8888-8889/tcp   physicsnemo-bootcamp
 ```
 
 ### 10-3. 查看啟動日誌
@@ -831,6 +831,45 @@ docker build --no-cache -t physicsnemo-bootcamp:25.06 ~/physicsnemo-workshop/
 ```bash
 sudo nvidia-ctk runtime configure --runtime=docker
 sudo systemctl restart docker
+```
+
+---
+
+### 容器啟動失敗：Driver Not Loaded
+
+**錯誤訊息**：`failed to initialize NVML: Driver Not Loaded`
+
+VM 連線中斷後恢復可能導致 NVIDIA kernel module 未載入。
+
+**方法一**：重新載入 module（最快）
+
+```bash
+sudo modprobe nvidia
+sudo systemctl restart docker
+docker start physicsnemo-bootcamp
+```
+
+**方法二**：若出現 `Module nvidia not found in directory /lib/modules/<kernel>`，代表當前 kernel 缺少對應的 module，需重新編譯：
+
+```bash
+# 安裝當前 kernel headers
+sudo apt-get install linux-headers-$(uname -r)
+
+# 觸發 DKMS 為當前 kernel 重新編譯 module
+sudo dkms autoinstall
+
+# 重啟 Docker 並啟動容器
+sudo systemctl restart docker
+docker start physicsnemo-bootcamp
+```
+
+**方法三**：若 DKMS 失敗，重裝 Driver（最穩定）：
+
+```bash
+sudo apt-get install --reinstall nvidia-driver-570
+sudo reboot
+# 重開機後重新 SSH 登入
+docker start physicsnemo-bootcamp
 ```
 
 ---
