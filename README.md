@@ -762,7 +762,13 @@ http://localhost:8888
 1. 將下載的 `leaderboard_metrics.csv` 壓縮成 `.zip` 檔，**檔名格式為 `xxx_1.zip`**（`xxx` 可自訂，例如團隊名稱）
 2. 上傳至：[記分板 Google Drive 資料夾](https://drive.google.com/drive/folders/1nZRAMdVwUUBYQBVAuLsWDdEX4-GQan-x?usp=drive_link)
 
-> **重新提交**：若想更新分數，以 `xxx_2.zip`、`xxx_3.zip`（遞增數字）重新上傳即可覆蓋前次紀錄。`xxx` 部分需與第一次相同。
+> ⚠️ **注意事項**
+>
+> - **CSV 檔名必須完全相同**：zip 壓縮包內的檔案名稱必須是 `leaderboard_metrics.csv`，一字不差。
+>   若檔名有任何變動（例如重新命名），背景表單將無法解析，分數欄位會顯示為 `NA`。
+>
+> - **每次重新提交必須遞增編號**：若已上傳過 `xxx_1.zip`，再次上傳同名 `xxx_1.zip` **不會**更新記分板。
+>   請改用 `xxx_2.zip`、`xxx_3.zip`（依序 +1）重新上傳，`xxx` 部分需與第一次相同。
 
 ---
 
