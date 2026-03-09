@@ -250,6 +250,7 @@ ssh ubuntu@140.110.108.39
 步驟 9  建置 Docker Image
 步驟 10 啟動 JupyterLab
 步驟 11 開始上機教學
+步驟 12 關閉 VM（課程結束後）
 ```
 
 ---
@@ -762,6 +763,18 @@ http://localhost:8888
 2. 上傳至：[記分板 Google Drive 資料夾](https://drive.google.com/drive/folders/1nZRAMdVwUUBYQBVAuLsWDdEX4-GQan-x?usp=drive_link)
 
 > **重新提交**：若想更新分數，以 `xxx_2.zip`、`xxx_3.zip`（遞增數字）重新上傳即可覆蓋前次紀錄。`xxx` 部分需與第一次相同。
+
+---
+
+## 步驟 12｜關閉 VM（課程結束後）
+
+> ⚠️ **執行前請確認**：已完成記分板提交（步驟 11-1），且不再需要保留此 VM。**刪除後無法復原。**
+
+課程結束後，回到 NCHC 雲平台的**虛擬機器管理**頁面，找到對應的 VM。
+
+點擊該欄位最右側的 **「⋮」** 按鈕，選擇 **「刪除」**，即可永久移除此 VM 並停止計費。
+
+![VM 管理頁面 — 刪除 VM](images/nchc-24-vm-delete.png)
 
 ---
 
